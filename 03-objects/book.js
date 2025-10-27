@@ -1,4 +1,4 @@
-let book = {
+const book = {
     title: 'Life of an IT girl',
     author: 'Jessa',
     yearPublished: 2025,
