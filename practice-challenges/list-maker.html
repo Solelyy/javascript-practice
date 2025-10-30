@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Maker</title>
 </head>
-<script>
-    const addBtn = document.getElementById('addBtn');
-    const container = document.querySelector('list');
-    const itemValue= document.getElementById('input-text').value;
-    
-    function addItem() {
-        const item = document.createElement('li');
-    }
-</script>
 <body>
     <header>
     </header>
@@ -29,4 +20,23 @@
     <footer>
     </footer>
 </body>
+<script>
+    const addBtn = document.getElementById('addBtn');
+    const container = document.querySelector('#list');
+    
+    
+    function addItem() {
+        
+        const itemValue = document.getElementById('input-text').value;
+        if (itemValue.trim() === '') return;
+        const item = document.createElement('li');
+        item.textContent = itemValue;
+        container.appendChild(item);
+        console.log(`${itemValue} is added.`);
+
+        document.getElementById('input-text').value = '';
+    }
+
+    addBtn.addEventListener('click', addItem)
+</script>
 </html>
