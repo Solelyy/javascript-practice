@@ -25,6 +25,38 @@ function addItem() {
     console.log(`${itemValue} is added.`);
 
     document.getElementById('input-text').value = '';
+    attachCheckboxListeners();
+}
+
+function attachCheckboxListeners() {
+    const checkboxes = document.querySelectorAll('#check-box');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('mouseenter', () => {
+            checkbox.textContent = '🌸';
+        });
+        checkbox.addEventListener('mouseleave', () => {
+            if (!checkbox.classList.contains('completed')) {
+                checkbox.textContent = '';
+            }
+        });
+        checkbox.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const itemContainer = checkbox.closest('.item-container');
+            const itemText = itemContainer.querySelector('.item-text');
+            
+            checkbox.classList.toggle('completed');
+            itemText.classList.toggle('completed');
+            itemContainer.classList.toggle('completed');
+            
+            if (checkbox.classList.contains('completed')) {
+                checkbox.textContent = '🌸';
+                console.log(`${itemText.textContent} is completed.`);
+            } else {
+                checkbox.textContent = '';
+                console.log(`${itemText.textContent} is uncompleted.`);
+            }
+        });
+    });
 }
 
 addBtn.addEventListener('click', addItem);
