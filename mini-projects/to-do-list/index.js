@@ -1,8 +1,7 @@
 const addBtn = document.getElementById('addBtn');
 const deleteBtn = document.getElementById('delete-btn')
 const list = document.querySelector('.list');
-
-
+const input = document.getElementById('input-text');
     
 function addItem() {
     let itemValue = document.getElementById('input-text').value;
@@ -26,7 +25,16 @@ function addItem() {
 
     document.getElementById('input-text').value = '';
     attachCheckboxListeners();
+    checkInputValues();
 }
+
+//Enable add button if there is an input
+function checkInputValues() {
+    const inputValue = input.value.trim();
+    addBtn.disabled =!(inputValue != '');
+}
+
+input.addEventListener('input', checkInputValues);
 
 function attachCheckboxListeners() {
     const checkboxes = document.querySelectorAll('#check-box');

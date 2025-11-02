@@ -227,3 +227,17 @@ h1 {
     color: white;
     font-size: 12px;
 }
+
+#addBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#addBtn:disabled:hover {
+    box-shadow: none;
+}
+
+#addBtn:enabled {
+    opacity: 1;
+    cursor: pointer;
+}
