@@ -9,7 +9,8 @@ async function fetchJoke() {
         const response = await fetch('https://official-joke-api.appspot.com/jokes/programming/random');
         const data = await response.json();
         setTimeout(() => {
-            joke.textContent = `${data[0].setup} - ${data[0].punchline}`;
+            const [{setup, punchline}] = data;
+            joke.textContent = `${setup} - ${punchline}`;
             joke.style.opacity = 1;
             jokeBtn.disabled = false;
         }, 2000);
@@ -17,6 +18,8 @@ async function fetchJoke() {
     } catch (error) {
         joke.textContent = 'Something went wrong, please try again later.';
         console.log('Error: ', error);
+        jokeBtn.disabled = false;
+    } finally {
         jokeBtn.disabled = false;
     }
 }
