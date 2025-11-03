@@ -113,7 +113,3 @@ list.addEventListener('click', (event) => {
         input.addEventListener('blur', saveEdit);
     }
 });
-
-
-
-
