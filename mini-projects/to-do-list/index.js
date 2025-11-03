@@ -3,6 +3,7 @@ const deleteBtn = document.getElementById('delete-btn')
 const list = document.querySelector('.list');
 const input = document.getElementById('input-text');
     
+//Add to-do item
 function addItem() {
     let itemValue = document.getElementById('input-text').value;
     if (itemValue === '') return;
@@ -36,6 +37,7 @@ function checkInputValues() {
 
 input.addEventListener('input', checkInputValues);
 
+//Checkbox 
 function attachCheckboxListeners() {
     const checkboxes = document.querySelectorAll('#check-box');
     checkboxes.forEach(checkbox => {
