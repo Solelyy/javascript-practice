@@ -12,4 +12,3 @@ for (let i = 0; i < random.length; i++) {
 }
 
 console.log(random);
-console.log(i);

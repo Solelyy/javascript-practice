@@ -22,7 +22,7 @@
   age = 21; // this is not allowed.
 
 - ex:
-  cconst foo = {};
+  const foo = {};
 
   const { boo = "nazarene" } = foo;
   console.log(boo);
